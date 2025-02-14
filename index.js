@@ -1,4 +1,4 @@
-process.loadEnvFile();
+import 'dotenv/config'
 
 import express from 'express';
 import { SearchProductFromMercadoLibre } from './main.js';
