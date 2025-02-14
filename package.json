@@ -1,0 +1,21 @@
+{
+  "name": "scrapping-merlibre",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "postinstall": "pnpm dlx puppeteer browsers install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3",
+    "puppeteer": "^24.2.1",
+    "resend": "^4.1.2"
+  }
+}
