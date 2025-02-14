@@ -1,5 +1,5 @@
 const {join} = require('path');
-
+const puppeteer = require('puppeteer');
 /**
  * @type {import("puppeteer").Configuration}
  */
