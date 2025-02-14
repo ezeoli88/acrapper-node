@@ -25,7 +25,7 @@ app.get('/search', async (req, res) => {
             from: 'onboarding@resend.dev',
             to: 'ekiolivier@gmail.com',
             subject: `Productos encontrados para ${q}`,
-            html: `<p>Productos encontrados para ${q}:</p><ul>${productos.map(producto => `<li>${producto.modelo} - ${producto.precioRebajado}</li>`).join('')}</ul>`
+            html: `<p>Productos encontrados para ${q}:</p><ul>${productos.map(producto => `<li>${producto.modelo} - ${producto.precioRebajado} - ${producto.rebaja} - ${producto.precioOriginal}</li>`).join('')}</ul>`
             });
         res.json({
             message: 'Email enviado correctamente',

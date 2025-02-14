@@ -5,7 +5,11 @@ export async function SearchProductFromMercadoLibre(productName) {
         const product = productName.replace(' ', '-');
         console.log(`Buscando el producto: ${product}...`);
         
-        const browser = await puppeteer.launch();
+        const browser = await puppeteer.launch({
+            headless: true,
+            executablePath: `/opt/render/.cache/puppeteer/chrome/linux-133.0.6943.98/chrome-linux64/chrome`,
+            args: [`--no-sandbox`, `--headless`, `--disable-gpu`, `--disable-dev-shm-usage`],
+        });
         const page = await browser.newPage();
         const url = `https://listado.mercadolibre.com.ar/${product}`;
         
