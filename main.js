@@ -6,7 +6,7 @@ export async function SearchProductFromMercadoLibre(productName) {
         console.log(`Buscando el producto: ${product}...`);
         
         const browser = await puppeteer.launch({
-            executablePath: '/opt/render/.cache/puppeteer/chrome',
+            executablePath: '/opt/render/.cache/puppeteer/chrome/linux-133.0.6943.98/chrome-linux64/chrome',
             headless: true,
   args: ['--no-sandbox']
         });
