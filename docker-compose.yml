@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  puppeteer:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    environment:
+      - DISPLAY=:99
+    depends_on:
+      - xvfb
+
+  xvfb:
+    image: debian:stable-slim
+    command: Xvfb :99 -screen 0 1280x720x24
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:ro
+    shm_size: '2gb'
