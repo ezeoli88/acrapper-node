@@ -6,9 +6,9 @@ export async function SearchProductFromMercadoLibre(productName) {
         console.log(`Buscando el producto: ${product}...`);
         
         const browser = await puppeteer.launch({
-            executablePath: '/opt/render/project/src',
+            executablePath: '/opt/render/project/src/dist/puppeteer',
             headless: true,
-  args: ['--no-sandbox', '--disable-setuid-sandbox', '--no-zygote']
+  args: ['--no-sandbox']
         });
         const page = await browser.newPage();
         const url = `https://listado.mercadolibre.com.ar/${product}`;
