@@ -29,7 +29,7 @@ export async function SearchProductFromMercadoLibre(productName) {
                 const precioOriginal = item.querySelector('.andes-money-amount__fraction')?.innerText || 'No disponible';
                 const precioRebajado = item.querySelector('.andes-money-amount--cents-superscript')?.innerText || 'No disponible';
                 const rebaja = item.querySelector('.andes-money-amount__discount')?.innerText || 'No disponible';
-                const link = item.querySelector('.ui-search-item__link')?.href || 'No disponible';
+                const link = item.querySelector('.poly-component__title')?.href || 'No disponible';
                 
                 results.push({ modelo, precioOriginal, precioRebajado, rebaja, link });
             }
