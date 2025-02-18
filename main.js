@@ -5,14 +5,14 @@ export async function SearchProductFromMercadoLibre(productName) {
         const product = productName.replace(' ', '-');
         console.log(`Buscando el producto: ${product}...`);
         
-        const browser = await webkit.launch({
-            timeout: 60000,
-        });
+        const browser = await webkit.launch();
         const page = await browser.newPage();
         const url = `https://listado.mercadolibre.com.ar/${product}`;
         
         console.log(`Visitando ${url}...`);
-        await page.goto(url);
+        await page.goto(url, {
+            waitUntil: 'domcontentloaded'
+        });
         
         await page.waitForSelector('.ui-search-layout__item');
         console.log('Obteniendo productos...');
