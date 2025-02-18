@@ -11,7 +11,8 @@ export async function SearchProductFromMercadoLibre(productName) {
         
         console.log(`Visitando ${url}...`);
         await page.goto(url, {
-            waitUntil: 'domcontentloaded'
+            waitUntil: 'domcontentloaded',
+            timeout: 0,
         });
         
         await page.waitForSelector('.ui-search-layout__item');
