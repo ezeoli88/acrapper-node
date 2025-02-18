@@ -1,11 +1,11 @@
-import { chromium } from "@playwright/test";
+import { webkit } from "@playwright/test";
 
 export async function SearchProductFromMercadoLibre(productName) {
     try {
         const product = productName.replace(' ', '-');
         console.log(`Buscando el producto: ${product}...`);
         
-        const browser = await chromium.launch();
+        const browser = await webkit.launch();
         const page = await browser.newPage();
         const url = `https://listado.mercadolibre.com.ar/${product}`;
         
