@@ -8,7 +8,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "node --watch index.js",
-    "postinstall": "pnpm dlx puppeteer browsers install"
+    "postinstall": "playwright install"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +16,10 @@
   "dependencies": {
     "dotenv": "^16.4.7",
     "express": "^4.18.3",
-    "puppeteer": "^24.2.1",
     "resend": "^4.1.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.4"
   }
 }

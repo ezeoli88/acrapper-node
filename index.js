@@ -45,7 +45,7 @@ app.get('/', (req, res) => {
     res.send(`
         <h1>API de Búsqueda MercadoLibre</h1>
         <p>Usa el endpoint /search?q=producto para buscar productos</p>
-        <p>Ejemplo: <a href="/search?q=celulares">/search?q=celulares</a></p>
+        <p>Ejemplo: <a href="/search?q=celulares">/search?q=celulares samsung</a></p>
     `);
 });
 

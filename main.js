@@ -1,14 +1,13 @@
-import puppeteer from 'puppeteer';
+import { chromium } from "@playwright/test";
 
 export async function SearchProductFromMercadoLibre(productName) {
     try {
         const product = productName.replace(' ', '-');
         console.log(`Buscando el producto: ${product}...`);
         
-        const browser = await puppeteer.launch({
-            executablePath: puppeteer.executablePath(),
+        const browser = await chromium.launch({
             headless: true,
-  args: ['--no-sandbox']
+            args: ['--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage'],
         });
         const page = await browser.newPage();
         const url = `https://listado.mercadolibre.com.ar/${product}`;
