@@ -5,10 +5,7 @@ export async function SearchProductFromMercadoLibre(productName) {
         const product = productName.replace(' ', '-');
         console.log(`Buscando el producto: ${product}...`);
         
-        const browser = await chromium.launch({
-            headless: true,
-            args: ['--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage'],
-        });
+        const browser = await chromium.launch();
         const page = await browser.newPage();
         const url = `https://listado.mercadolibre.com.ar/${product}`;
         

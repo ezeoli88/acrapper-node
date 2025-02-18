@@ -45,10 +45,10 @@ app.get('/', (req, res) => {
     res.send(`
         <h1>API de Búsqueda MercadoLibre</h1>
         <p>Usa el endpoint /search?q=producto para buscar productos</p>
-        <p>Ejemplo: <a href="/search?q=celulares">/search?q=celulares samsung</a></p>
+        <p>Ejemplo: <a href="/search?q=celulares">/search?q=celulares%20samsung</a></p>
     `);
 });
 
 app.listen(port, () => {
-    console.log(`Servidor corriendo en http://localhost:${port}`);
+    console.log(`Servidor corriendo en puerto: ${port}`);
 });
